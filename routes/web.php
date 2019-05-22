@@ -13,10 +13,11 @@
 //Route ::get('/',function(){
 //    return view ('index');
 //});
-Route::get('/','HomeController@showHome');
+Route::get('/','HomeController@showHome')->name('home');
+Route::get('/category/{slug}','HomeController@showProductsByCategory')->name('category');
 Route::get('/about','HomeController@showAbout')->name('about');
-Route::get('/register','User@showRegister');
-Route::get('/login','User@showLogin');
+Route::get('/register','User@showRegister')->name('register');
+Route::get('/login','User@showLogin')->name('login');
 //group route.....
 //Route::group(['prefix'=>'admin'],function (){
 //    Route::get('/create','');
